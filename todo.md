@@ -9,7 +9,7 @@ Phase 1: Core Data Structures & Initial Setup
 Goal: Represent the basic components of Prolog (terms, rules, knowledge base) in C++ classes.
 
 Tasks:
-[ ] Define a Term class to represent variables, atoms, and compound terms
+[x] Define a Term class to represent variables, atoms, and compound terms
 [ ] Define a Rule class to represent facts (rules with empty body) and rules with bodies
 [ ] Define a KnowledgeBase class to store all rules
 [ ] Create a simple Utils class/namespace for helper functions (e.g., trimming strings)

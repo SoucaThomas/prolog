@@ -11,6 +11,7 @@ include_directories(include)
 # Main executable
 add_executable(prolog_interpreter
     src/main.cpp
+    src/term.cpp
     src/interpreter.cpp
     src/parser.cpp
     src/lexer.cpp

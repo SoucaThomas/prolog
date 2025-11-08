@@ -1,5 +1,5 @@
 BasedOnStyle: Google
 IndentWidth: 4
-ColumnLimit: 100
-BreakBeforeBraces: Allman
+ColumnLimit: 130
+BreakBeforeBraces: Attach
 SortIncludes: false
