@@ -1,5 +1,4 @@
 #include "term.hpp"
-#include "unifier.hpp"
 #include <iostream>
 
 Term::Term(std::string name, bool variable) : name(std::move(name)), variable(variable) {}

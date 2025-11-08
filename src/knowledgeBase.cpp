@@ -3,14 +3,12 @@
 #include <iostream>
 #include <vector>
 
-knowledgeBase::knowledgeBase() : rules() {}
-
 void knowledgeBase::addRule(const Rule& rule) { rules.push_back(rule); }
 
 void knowledgeBase::print() const {
-    std::cout << "Knowledge Base:" << std::endl;
+    std::cout << "Knowledge Base:" << '\n';
     for (const auto& rule : rules) {
         rule.print();
-        std::cout << std::endl;
+        std::cout << '\n';
     }
 }

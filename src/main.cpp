@@ -1,3 +1,4 @@
+// NOLINTBEGIN(readability-identifier-length)
 #include "term.hpp"
 #include "unifier.hpp"
 #include <iostream>
@@ -40,3 +41,4 @@ auto main() -> int {
 
     return 0;
 }
+// NOLINTEND(readability-identifier-length)

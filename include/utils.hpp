@@ -2,5 +2,5 @@
 #include <string>
 
 namespace Utils {
-std::string trim(const std::string& str);
+auto trim(const std::string& str) -> std::string;
 }
