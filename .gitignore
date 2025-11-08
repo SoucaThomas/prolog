@@ -1,0 +1,40 @@
+# Build directories
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake-build-*/
+
+# Executables
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# CLion
+.idea/
+cmake-build-*/
+
+# MacOS
+.DS_Store
+
+# Linux
+*~
+
+# Logs
+*.log
+
+# Generated compile commands
+compile_commands.json
+
+# Google Test output (optional)
+*.gcda
+*.gcno
+*.gcov
