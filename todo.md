@@ -31,7 +31,7 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 ### Tasks:
 
 -   [x] ✅ Define a Term class to represent variables, atoms, and compound terms
--   [ ] ⚪ Define a Rule class to represent facts (rules with empty body) and rules with bodies
+-   [x] ⚪ Define a Rule class to represent facts (rules with empty body) and rules with bodies
 -   [ ] ⚪ Define a KnowledgeBase class to store all rules
 -   [ ] ⚪ Create a simple Utils class/namespace for helper functions (e.g., trimming strings)
 -   [ ] ⚪ Hardcode a few sample facts and rules to test the structure
