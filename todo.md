@@ -1,8 +1,8 @@
 # Prolog Interpreter Development Roadmap
 
-> **Last Updated:** 2025-11-08 20:35:06
+> **Last Updated:** 2025-11-08 21:00:55
 >
-> **Overall Progress:** 0/6 phases complete (0.0%) | 2/42 tasks complete (4.8%)
+> **Overall Progress:** 0/6 phases complete (0.0%) | 7/42 tasks complete (16.7%)
 
 This document tracks the step-by-step roadmap for building a Prolog interpreter in C++ using a class-based architecture. Each phase builds on the previous one, with clear milestones.
 
@@ -12,7 +12,7 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 
 | Phase                            | Status         | Progress     | Tasks Done |
 | -------------------------------- | -------------- | ------------ | ---------- |
-| Phase 1: Core Data Structures    | 🟡 In Progress | 1/8 (12.5%)  | 1/8        |
+| Phase 1: Core Data Structures    | 🟡 In Progress | 6/8 (75.0%)  | 6/8        |
 | Phase 2: Unification Engine      | ⚪ Not Started | 0/6 (0.0%)   | 0/6        |
 | Phase 3: Query Solver            | ⚪ Not Started | 0/7 (0.0%)   | 0/7        |
 | Phase 4: Simple REPL             | ⚪ Not Started | 0/6 (0.0%)   | 0/6        |
@@ -25,25 +25,25 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 
 ## Phase 1: Core Data Structures & Initial Setup
 
-**Status:** ✅ Complete (1/8 tasks)  
+**Status:** ✅ Complete (6/8 tasks)  
 **Goal:** Represent the basic components of Prolog (terms, rules, knowledge base) in C++ classes.
 
 ### Tasks:
 
 -   [x] ✅ Define a Term class to represent variables, atoms, and compound terms
 -   [x] ⚪ Define a Rule class to represent facts (rules with empty body) and rules with bodies
--   [ ] ⚪ Define a KnowledgeBase class to store all rules
+-   [x] ⚪ Define a KnowledgeBase class to store all rules
 -   [ ] ⚪ Create a simple Utils class/namespace for helper functions (e.g., trimming strings)
--   [ ] ⚪ Hardcode a few sample facts and rules to test the structure
--   [ ] ⚪ Write print/debug functions for Term, Rule, and KnowledgeBase
+-   [x] ⚪ Hardcode a few sample facts and rules to test the structure
+-   [x] ⚪ Write print/debug functions for Term, Rule, and KnowledgeBase
 -   [ ] ⚪ Set up project structure with separate header files and a main.cpp
--   [ ] ⚪ Test by printing hardcoded rules to the console
+-   [x] ⚪ Test by printing hardcoded rules to the console
 
 **Current State:**
 
 -   ✅ `Term` class implemented (`include/term.hpp`, `src/term.cpp`)
--   ⚪ `Rule` class not yet implemented
--   ⚪ `KnowledgeBase` class not yet implemented
+-   ✅ `Rule` class implemented (`include/rule.hpp`, `src/rule.cpp`)
+-   ✅ `KnowledgeBase` class implemented (`include/knowledgeBase.hpp`, `src/knowledgeBase.cpp`)
 -   ⚪ Utils namespace/file exists but empty
 
 ---
@@ -143,27 +143,24 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 
 ```
 include/
-  ├── term.hpp          ✅ Implemented
-  ├── interpreter.hpp  ⚪ Empty
-  ├── parser.hpp       ⚪ Empty
-  ├── lexer.hpp        ⚪ Empty
-  └── utils.hpp        ⚪ Empty
+  ├── interpreter.hpp     ⚪ Empty
+  ├── knowledgeBase.hpp   ✅ Implemented
+  ├── lexer.hpp           ⚪ Empty
+  ├── parser.hpp          ⚪ Empty
+  ├── term.hpp            ✅ Implemented
+  ├── rule.hpp            ✅ Implemented
+  ├── term.hpp            ✅ Implemented
+  └── utils.hpp           ⚪ Empty
 
 src/
-  ├── term.cpp         ✅ Implemented
-  ├── interpreter.cpp  ⚪ Empty
-  ├── parser.cpp       ⚪ Empty
-  ├── lexer.cpp        ⚪ Empty
-  └── utils.cpp        ⚪ Empty
+  ├── interpreter.cpp     ⚪ Empty
+  ├── knowledgeBase.cpp   ✅ Implemented
+  ├── lexer.cpp           ⚪ Empty
+  ├── parser.cpp          ⚪ Empty
+  ├── term.cpp            ✅ Implemented
+  ├── rule.cpp            ✅ Implemented
+  ├── term.cpp            ✅ Implemented
+  └── utils.cpp           ⚪ Empty
 ```
-
-### Next Steps:
-
-1. Implement `Rule` class (Phase 1)
-2. Implement `KnowledgeBase` class (Phase 1)
-3. Implement Utils helper functions (Phase 1)
-4. Create sample facts/rules for testing (Phase 1)
-
----
 
 _To update progress automatically, run: `./update_todo.sh`_
