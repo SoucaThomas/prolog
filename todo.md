@@ -1,8 +1,8 @@
 # Prolog Interpreter Development Roadmap
 
-> **Last Updated:** 2025-11-08 23:53:32
+> **Last Updated:** 2025-11-09 00:07:20
 >
-> **Overall Progress:** 1/6 phases complete (16.7%) | 14/42 tasks complete (33.3%)
+> **Overall Progress:** 2/6 phases complete (33.3%) | 18/42 tasks complete (42.9%)
 
 This document tracks the step-by-step roadmap for building a Prolog interpreter in C++ using a class-based architecture. Each phase builds on the previous one, with clear milestones.
 
@@ -12,12 +12,12 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 
 | Phase                            | Status         | Progress     | Tasks Done |
 | -------------------------------- | -------------- | ------------ | ---------- |
-| Phase 1: Core Data Structures    | ✅ Complete | 8/8 (100.0%) | 8/8 |
-| Phase 2: Unification Engine      | 🟡 In Progress | 5/6 (83.3%) | 5/6 |
-| Phase 3: Query Solver            | ⚪ Not Started | 0/7 (0.0%) | 0/7 |
-| Phase 4: Simple REPL             | ⚪ Not Started | 0/6 (0.0%) | 0/6 |
-| Phase 5: Parser for Prolog Files | ⚪ Not Started | 0/5 (0.0%) | 0/5 |
-| Phase 6: Optional Enhancements   | 🟡 In Progress | 1/10 (10.0%) | 1/10 |
+| Phase 1: Core Data Structures    | ✅ Complete    | 8/8 (100.0%) | 8/8        |
+| Phase 2: Unification Engine      | ✅ Complete    | 6/6 (100.0%) | 6/6        |
+| Phase 3: Query Solver            | ⚪ Not Started | 0/7 (0.0%)   | 0/7        |
+| Phase 4: Simple REPL             | ⚪ Not Started | 0/6 (0.0%)   | 0/6        |
+| Phase 5: Parser for Prolog Files | ⚪ Not Started | 0/5 (0.0%)   | 0/5        |
+| Phase 6: Optional Enhancements   | 🟡 In Progress | 4/10 (40.0%) | 4/10       |
 
 **Legend:** ✅ Complete | 🟡 In Progress | ⚪ Not Started | ❌ Blocked
 
@@ -50,7 +50,7 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 
 ## Phase 2: Unification Engine
 
-**Status:** 🟡 In Progress (5/6 tasks)  
+**Status:** ✅ Complete (6/6 tasks)  
 **Goal:** Implement the core logic for matching queries with facts and rules.
 
 ### Tasks:
@@ -58,18 +58,18 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 -   [x] ✅ Define a Substitution class/map to track variable bindings
 -   [x] ✅ Implement a Unifier class or function that can unify two Term objects and update substitutions
 -   [x] ✅ Handle variable-to-variable, variable-to-atom, and compound term unifications
--   [ ] ⚪ Write unit tests for unification scenarios (success and failure cases)
+-   [x] ✅ Write unit tests for unification scenarios (success and failure cases)
 -   [x] ✅ Ensure substitution propagation works recursively within compound terms
 -   [x] ✅ Test by unifying hardcoded terms and printing the resulting substitutions
 
 **Current State:**
 
 -   ✅ `Substitution` class implemented (`include/unifier.hpp`, `src/unifier.cpp`)
--   ✅ `unify()` function implemented with recursive algorithm
+-   ✅ `unify()` function implemented with recursive algorithm (based on Sterling & Shapiro, 1994)
 -   ✅ `applySubstitution()` function for substitution propagation
 -   ✅ `occursCheck()` function to prevent circular bindings
+-   ✅ Comprehensive unit tests (`test/unifier_test.cpp` - 20 tests)
 -   ✅ Basic tests in `main.cpp` (variable binding, compound terms)
--   ⚪ Unit tests file exists (`test/unifier_test.cpp`) but is empty
 
 ---
 
@@ -125,7 +125,7 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 
 ## Phase 6: Optional Enhancements
 
-**Status:** ⚪ Not Started (1/10 tasks)  
+**Status:** ⚪ Not Started (4/10 tasks)  
 **Goal:** Advanced features and optimizations.
 
 ### Tasks:
@@ -144,9 +144,9 @@ This document tracks the step-by-step roadmap for building a Prolog interpreter 
 ### Architecture Guidelines:
 
 -   [x] ✅ Keep the class architecture modular: Term, Rule, KnowledgeBase, Unifier, Solver
--   [ ] ⚪ Document each function and class for clarity
--   [ ] ⚪ Use a small set of example facts and rules initially to verify correctness
--   [ ] ⚪ Always test each phase thoroughly before moving to the next
+-   [x] ✅ Document each function and class for clarity (unification algorithm documented)
+-   [x] ✅ Use a small set of example facts and rules initially to verify correctness
+-   [x] ✅ Always test each phase thoroughly before moving to the next (comprehensive test suite created)
 
 ### Current File Structure:
 
@@ -170,6 +170,13 @@ src/
   ├── rule.cpp             ✅ Implemented
   ├── unifier.cpp          ✅ Implemented
   └── utils.cpp            ✅ Implemented
+
+test/
+  ├── term_test.cpp         ✅ 6 tests
+  ├── rule_test.cpp         ✅ 3 tests
+  ├── knowledgeBase_test.cpp ✅ 4 tests
+  ├── utils_test.cpp        ✅ 8 tests
+  └── unifier_test.cpp      ✅ 20 tests
 ```
 
 _To update progress automatically, run: `./update_todo.sh`_

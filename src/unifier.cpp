@@ -68,6 +68,7 @@ auto occursCheck(const std::string& varName, const Term& term, const Substitutio
     }
 
     //* If term is compound, check all arguments
+    // NOLINTNEXTLINE
     for (const auto& arg : term.arguments) {
         if (occursCheck(varName, arg, sub)) {
             return true;
