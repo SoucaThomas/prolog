@@ -9,9 +9,7 @@ FetchContent_MakeAvailable(googletest)
 
 # Add tests
 add_executable(PrologTests
-    lexer_test.cpp
-    parser_test.cpp
-    interpreter_test.cpp
+    unifier_test.cpp
 )
 target_include_directories(PrologTests PRIVATE ../include)
 target_link_libraries(PrologTests gtest gtest_main)

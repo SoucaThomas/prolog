@@ -1,10 +1,11 @@
 #include "term.hpp"
+#include "unifier.hpp"
 #include <iostream>
 
-Term::Term(const std::string& name, bool variable) : name(name), variable(variable) {}
+Term::Term(std::string name, bool variable) : name(std::move(name)), variable(variable) {}
 
-Term::Term(const std::string& name, const std::vector<Term>& arguments, bool variable)
-    : name(name), arguments(arguments), variable(variable) {}
+Term::Term(std::string name, std::vector<Term> arguments, bool variable)
+    : name(std::move(name)), arguments(std::move(arguments)), variable(variable) {}
 
 void Term::print() const {
     std::cout << name;
@@ -12,7 +13,9 @@ void Term::print() const {
         std::cout << "(";
         for (size_t i = 0; i < arguments.size(); ++i) {
             arguments[i].print();
-            if (i + 1 < arguments.size()) std::cout << ", ";
+            if (i + 1 < arguments.size()) {
+                std::cout << ", ";
+            }
         }
         std::cout << ")";
     }

@@ -38,3 +38,6 @@ compile_commands.json
 *.gcda
 *.gcno
 *.gcov
+
+# cache
+.cache

@@ -13,7 +13,8 @@ add_executable(prolog_interpreter
     src/main.cpp
     src/term.cpp
     src/rule.cpp
-    src/knowlageBase.cpp
+    src/knowledgeBase.cpp
+    src/unifier.cpp
 )
 
 # Enable testing

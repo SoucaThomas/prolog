@@ -2,11 +2,11 @@
 #include "rule.hpp"
 #include <vector>
 
-class KnowledgeBase {
+class knowledgeBase {
    public:
     std::vector<Rule> rules;
 
-    KnowledgeBase();
+    knowledgeBase();
     void addRule(const Rule& rule);
     void print() const;
 };
